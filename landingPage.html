@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daceve - Coming Soon</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Marcellus&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Marcellus', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        
+        .left-section {
+            flex: 1;
+            background: linear-gradient(135deg, #ebe2d4 0%, #d8bc85 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            position: relative;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 80px;
+            padding: 15px 20px;
+        }
+        
+        .content {
+            text-align: center;
+            max-width: 400px;
+        }
+        
+        .stay-tuned {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .coming-soon {
+            font-size: 36px;
+            font-weight: 300;
+            letter-spacing: 8px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+            font-size: 48px;
+            font-weight: 300;
+            color: #333;
+        }
+        
+        .countdown span {
+            font-weight: 300;
+        }
+        
+        .countdown-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .countdown-number {
+            height: 60px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .countdown-digit {
+            display: block;
+            text-align: center;
+            line-height: 60px;
+            width: 80px;
+            transition: transform 0.5s ease;
+        }
+        
+        .countdown-digit.animate {
+            animation: scrollUp 0.5s ease;
+        }
+        
+        @keyframes scrollUp {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-60px);}
+        }
+        
+        .countdown-label {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        
+        .description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 350px;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+        
+        .social-icons a {
+            filter: brightness(0) invert(1) drop-shadow(0 0 1px rgba(255,255,255,0.8));
+            text-decoration: none;
+            display: flex;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            filter: none;
+            color: white;
+        }
+
+        .waves{
+            width: 80px;
+            height: 50px;
+        }
+
+        .beach{
+            width: 150px;
+            height: 50px;
+        }
+
+        .retreat{
+            width: 150px;
+            height: 50px;
+        }
+
+        .pavilion{
+            width: 100px;
+            height: 50px;
+        }
+        
+        .right-section {
+            flex: 1;
+            background-image: url('https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg?_gl=1*1jbcxxx*_ga*MzA5MjgxOTEwLjE3NTExMjQ3Mjc.*_ga_8JE65Q40S6*czE3NTExMjQ3MjYkbzEkZzEkdDE3NTExMjQ4MzAkajU5JGwwJGgw');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .overlapped-image {
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 600px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .overlapped-image img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .left-section, .right-section {
+                flex: none;
+                height: 50vh;
+            }
+            
+            .logo {
+                top: 20px;
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+            
+            .coming-soon {
+                font-size: 24px;
+                letter-spacing: 4px;
+            }
+            
+            .countdown {
+                font-size: 32px;
+                gap: 15px;
+            }
+            
+            .countdown-number {
+                height: 40px;
+            }
+            
+            .countdown-digit {
+                line-height: 40px;
+            }
+            
+            @keyframes scrollUp {
+                0% { transform: translateY(0); }
+                100% { transform: translateY(-40px); }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="logo">
+                <img src="lg.png" alt="">
+            </div>
+            
+            <div class="content">
+                <div class="stay-tuned">Stay Tuned</div>
+                <div class="subtitle">Our New Website Is</div>
+                
+                <h1 class="coming-soon">COMING SOON</h1>
+                
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="days-container">
+                            <span class="countdown-digit">00</span>
+                        </div>
+                        <div class="countdown-label">DAYS</div>
+                    </div>
+                    <span>:</span>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours-container">
+                            <span class="countdown-digit">00</span>
+                        </div>
+                        <div class="countdown-label">HOURS</div>
+                    </div>
+                    <span>:</span>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes-container">
+                            <span class="countdown-digit">00</span>
+                        </div>
+                        <div class="countdown-label">MIN</div>
+                    </div>
+                    <span>:</span>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds-container">
+                            <span class="countdown-digit">00</span>
+                        </div>
+                        <div class="countdown-label">SEC</div>
+                    </div>
+                </div>
+                
+                <p class="description">
+                    Daceve is a fashion brand which has 200 clothing<br>
+                    and footwear shops for girls and boys all over The World.
+                </p>
+                
+            </div>
+                            
+                <div class="social-icons">
+                    <a href="https://waves.ceylonlensmedia.com/"><img class="waves" src="https://waves.ceylonlensmedia.com/wp-content/uploads/2025/05/logo2-Photoroom.png" alt=""></a>
+                    <a href="https://beachhouse.ceylonlensmedia.com/"><img class="beach" src="https://beachhouse.ceylonlensmedia.com/wp-content/uploads/2025/06/beach-house.png" alt=""></a>
+                    <a href="https://retreat.ceylonlensmedia.com/"><img class="retreat" src="https://retreat.ceylonlensmedia.com/wp-content/uploads/2025/06/retreatlogo.png" alt=""></a>
+                    <a href="https://thambapanni.ceylonlensmedia.com/"><img class="pavilion" src="https://thambapanni.ceylonlensmedia.com/wp-content/uploads/2025/05/pavilion-logo.png" alt=""></a>
+                </div>
+        </div>
+        
+        <div class="right-section">
+            <div class="overlapped-image">
+                <img src="https://images.pexels.com/photos/2631613/pexels-photo-2631613.jpeg?_gl=1*1nsgmy9*_ga*MzA5MjgxOTEwLjE3NTExMjQ3Mjc.*_ga_8JE65Q40S6*czE3NTExMjQ3MjYkbzEkZzEkdDE3NTExMjUyNTAkajUzJGwwJGgw" alt="">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Set the target date to 30 days from now
+        const targetDate = new Date("2025-07-28T00:00:00");
+        
+        // Previous values for animation
+        let prevDays = 0;
+        let prevHours = 0;
+        let prevMinutes = 0;
+        let prevSeconds = 0;
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            if (distance <= 0) {
+                // Countdown finished
+                document.getElementById('countdown').innerHTML = '<span>WE ARE LIVE!</span>';
+                return;
+            }
+            
+            // Calculate time units
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Update display with animation
+            updateDigit('days-container', days, prevDays);
+            updateDigit('hours-container', hours, prevHours);
+            updateDigit('minutes-container', minutes, prevMinutes);
+            updateDigit('seconds-container', seconds, prevSeconds);
+            
+            // Store current values for next comparison
+            prevDays = days;
+            prevHours = hours;
+            prevMinutes = minutes;
+            prevSeconds = seconds;
+        }
+        
+        function updateDigit(containerId, newValue, oldValue) {
+            const container = document.getElementById(containerId);
+            const digitElement = container.querySelector('.countdown-digit');
+            
+            if (newValue !== oldValue) {
+                // Create a clone for the animation
+                const newDigit = digitElement.cloneNode(true);
+                newDigit.textContent = newValue.toString().padStart(2, '0');
+                
+                // Position the new digit below
+                newDigit.style.position = 'absolute';
+                // newDigit.style.transform = 'translateY(60px)';
+                
+                // Add to container
+                container.appendChild(newDigit);
+                
+                // Animate both digits
+                digitElement.classList.add('animate');
+                newDigit.classList.add('animate');
+                
+                // Remove old digit after animation
+                setTimeout(() => {
+                    container.removeChild(digitElement);
+                    newDigit.classList.remove('animate');
+                    newDigit.style.position = 'static';
+                    newDigit.style.transform = 'translateY(0)';
+                }, 500);
+            } else {
+                // Just update the value without animation
+                digitElement.textContent = newValue.toString().padStart(2, '0');
+            }
+        }
+        
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
+</body>
+</html>
