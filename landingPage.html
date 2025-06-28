@@ -36,7 +36,7 @@
         
         .logo {
             position: absolute;
-            top: 80px;
+            top: 60px;
             padding: 15px 20px;
         }
         
@@ -126,7 +126,7 @@
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 60px;
+            gap: 30px;
         }
         
         .social-icons a {
@@ -174,9 +174,9 @@
             position: absolute;
             top: 50%;
             left: 20%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            height: 600px;
+            transform: translate(-60%, -50%);
+            width: 400px;
+            height: 500px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
@@ -306,12 +306,6 @@
         function updateCountdown() {
             const now = new Date().getTime();
             const distance = targetDate - now;
-            
-            if (distance <= 0) {
-                // Countdown finished
-                document.getElementById('countdown').innerHTML = '<span>WE ARE LIVE!</span>';
-                return;
-            }
             
             // Calculate time units
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
