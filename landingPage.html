@@ -30,13 +30,13 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 40px;
+            padding: 0px 40px;
             position: relative;
         }
         
         .logo {
             position: absolute;
-            top: 60px;
+            top: 50px;
             padding: 15px 20px;
         }
         
@@ -48,8 +48,8 @@
         .stay-tuned {
             font-size: 16px;
             color: #666;
-            margin-bottom: 10px;
             font-weight: 300;
+            margin-top: 30px;
         }
         
         .subtitle {
@@ -105,10 +105,6 @@
             animation: scrollUp 0.5s ease;
         }
         
-        @keyframes scrollUp {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-60px);}
-        }
         
         .countdown-label {
             font-size: 14px;
@@ -127,6 +123,7 @@
             display: flex;
             justify-content: center;
             gap: 30px;
+            margin-top: 50px;
         }
         
         .social-icons a {
@@ -139,32 +136,31 @@
         
         .social-icons a:hover {
             filter: none;
-            color: white;
         }
 
         .waves{
-            width: 80px;
-            height: 50px;
+            width: 70px;
+            height: 40px;
         }
 
         .beach{
-            width: 150px;
-            height: 50px;
+            width: 140px;
+            height: 40px;
         }
 
         .retreat{
-            width: 150px;
-            height: 50px;
+            width: 140px;
+            height: 54px;
         }
 
         .pavilion{
-            width: 100px;
-            height: 50px;
+            width: 90px;
+            height: 40px;
         }
         
         .right-section {
             flex: 1;
-            background-image: url('https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg?_gl=1*1jbcxxx*_ga*MzA5MjgxOTEwLjE3NTExMjQ3Mjc.*_ga_8JE65Q40S6*czE3NTExMjQ3MjYkbzEkZzEkdDE3NTExMjQ4MzAkajU5JGwwJGgw');
+            background-image: url('https://images.pexels.com/photos/4318924/pexels-photo-4318924.jpeg?_gl=1*1b55awy*_ga*MzA5MjgxOTEwLjE3NTExMjQ3Mjc.*_ga_8JE65Q40S6*czE3NTExMzk5MTQkbzMkZzEkdDE3NTExNDA0MjMkajU5JGwwJGgw');
             background-size: cover;
             background-position: center;
             position: relative;
@@ -186,19 +182,61 @@
             height: 100%;
             object-fit: cover;
         }
+
+
+        @media (max-width: 1368px) {
+            .overlapped-image{
+                transform: translate(-40%, -50%);
+            }
+            .waves {
+                width: 50px;
+                height: 30px;
+            }
+            
+            .beach {
+                width: 100px;
+                height: 30px;
+            }
+            
+            .retreat {
+                width: 100px;
+                height: 40px;
+            }
+            
+            .pavilion {
+                width: 70px;
+                height: 30px;
+            }
+
+                    .coming-soon {
+            font-size: 30px;
+        }
+        
+        .countdown {
+            font-size: 40px;
+        }
+        }
+        
+        @media (max-width: 1024px) {
+            .overlapped-image {
+                display: none;
+            }
+            .right-section{
+                display: none;
+            }
+        }
         
         @media (max-width: 768px) {
+            
+            .right-section{
+                display: none;
+            }
             .container {
                 flex-direction: column;
             }
             
-            .left-section, .right-section {
-                flex: none;
-                height: 50vh;
-            }
-            
             .logo {
-                top: 20px;
+                top: 100px;
                 font-size: 14px;
                 padding: 10px 15px;
             }
@@ -206,11 +244,13 @@
             .coming-soon {
                 font-size: 24px;
                 letter-spacing: 4px;
+                margin-bottom: 20px;
             }
             
             .countdown {
                 font-size: 32px;
                 gap: 15px;
+                margin-bottom: 20px;
             }
             
             .countdown-number {
@@ -219,11 +259,36 @@
             
             .countdown-digit {
                 line-height: 40px;
+                width: 60px;
             }
             
-            @keyframes scrollUp {
-                0% { transform: translateY(0); }
-                100% { transform: translateY(-40px); }
+            .description {
+                margin-bottom: 20px;
+            }
+            
+            .social-icons {
+                margin-top: 40px;
+                gap: 15px;
+            }
+            
+            .waves {
+                width: 50px;
+                height: 30px;
+            }
+            
+            .beach {
+                width: 100px;
+                height: 30px;
+            }
+            
+            .retreat {
+                width: 100px;
+                height: 40px;
+            }
+            
+            .pavilion {
+                width: 70px;
+                height: 30px;
             }
         }
     </style>
@@ -237,7 +302,7 @@
             
             <div class="content">
                 <div class="stay-tuned">Stay Tuned</div>
-                <div class="subtitle">Our New Website Is</div>
+                <div class="subtitle">Thaproban Villa</div>
                 
                 <h1 class="coming-soon">COMING SOON</h1>
                 
@@ -272,8 +337,7 @@
                 </div>
                 
                 <p class="description">
-                    Daceve is a fashion brand which has 200 clothing<br>
-                    and footwear shops for girls and boys all over The World.
+                    Thaproban Villa is our newest addition, bringing you comfort, style, and a peaceful stay.
                 </p>
                 
             </div>
@@ -337,21 +401,15 @@
                 
                 // Position the new digit below
                 newDigit.style.position = 'absolute';
-                // newDigit.style.transform = 'translateY(60px)';
                 
                 // Add to container
                 container.appendChild(newDigit);
-                
-                // Animate both digits
-                digitElement.classList.add('animate');
-                newDigit.classList.add('animate');
                 
                 // Remove old digit after animation
                 setTimeout(() => {
                     container.removeChild(digitElement);
                     newDigit.classList.remove('animate');
                     newDigit.style.position = 'static';
-                    newDigit.style.transform = 'translateY(0)';
                 }, 500);
             } else {
                 // Just update the value without animation
